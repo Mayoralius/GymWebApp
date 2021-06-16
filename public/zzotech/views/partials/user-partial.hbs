@@ -1,0 +1,18 @@
+<p>{{summary}}</p>
+{{#if users}}
+    <h3>Users</h3>
+    {{#each users}}
+        <p>
+            <b>Name: </b> {{name}}<br>
+            <b>Surname: </b> {{surname}}<br>
+            <b>Email:</b> {{email}}<br>
+            <b>Birth: </b> {{birth}}<br>
+            <b>Address: </b> {{address}}<br>
+            <b>Password1: </b> {{password1}}<br>
+            <b>Password2: </b> {{password2}}
+        </p>
+    {{/each}}
+    <br>
+{{else}}<h3>No users</h3>{{/if}}
+<a href="/zzotech/views/user/{{id}}/addUser" onclick="{{addUser_onclick}}(event);">Add User</a>
+<hr>

@@ -1,0 +1,68 @@
+{{> navbar-partial user = 'user'}}
+{{> jumbotron-partial}}
+<main>
+    <p></p>
+    <div class="container col-8 col-xl-6 bg-light border rounded" >
+
+        <h3 class="text-secondary">Profile</h3>
+
+        <div class="input-group mb-3 border rounded bg-secondary">
+            <div class="input-group-prepend text-white col-4">
+                <span class="input-group-text align-middle">Name</span>
+            </div>
+            <span class="form-control" id="Name">{{user.name}}</span>
+        </div>
+
+        <div class="input-group mb-3 border rounded bg-secondary">
+            <div class="input-group-prepend text-white col-4">
+                <span class="input-group-text align-middle">Surname</span>
+            </div>
+            <span class="form-control" id="Surname">{{user.surname}}</span>
+        </div>
+
+        <div class="input-group mb-3 border rounded bg-secondary">
+            <div class="input-group-prepend  text-white col-4">
+                <span class="input-group-text align-middle">Birth Date</span>
+            </div>
+            <span class="form-control " id="Birth_Date">{{user.birth}}</span>
+        </div>
+
+        <div class="input-group mb-3 border rounded bg-secondary">
+            <div class="input-group-prepend text-white col-4">
+                <span class="input-group-text align-middle">Address</span>
+            </div>
+            <span class="form-control " id="Address">{{user.address}}</span>
+        </div>
+
+        <div class="input-group mb-3 border rounded bg-secondary align-text-center">
+            <div class="input-group-prepend text-white col-4 ">
+                <span class="input-group-text align-middle">Email</span>
+            </div>
+            <span class="form-control " id="Email">{{user.email}}</span>
+        </div>
+    </div>
+
+    <p></p>
+    <div class="container col-8 col-xl-6 bg-light border rounded">
+
+        <h3 class="text-secondary">Order List</h3>
+        <table class="table">
+            <thead class="bg-secondary text-white">
+            <tr>
+                <th scope="col ">Date</th>
+                <th scope="col">Number</th>
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each orders}}
+                {{> profile-partial}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <p></p>
+</main>
+<br><br><br><br>
+{{> footer-partial}}

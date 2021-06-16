@@ -1,0 +1,28 @@
+{{> navbar-partial user = 'user'}}
+{{> jumbotron-partial}}
+<main>
+    <div class="container col-8 col-xl-6 bg-light border rounded" >
+        <h3 class="text-secondary">Products To Purchase</h3>
+            <table class="table">
+                <thead class="bg-secondary text-white">
+                <tr>
+                    <th scope="col">Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {{#each cart.items}}
+                        {{> purchase-partial this}}
+                    {{/each}}
+                </tbody>
+            </table>
+        <div class="d-flex justify-content-center mt-5">
+            <button type="button" class="btn btn-secondary" onclick="Controller.controllers.purchase.checkout_onclick(event)">Add Items To Order</button>
+        </div>
+    </div>
+</main>
+<br><br><br><br>
+{{> footer-partial}}
+

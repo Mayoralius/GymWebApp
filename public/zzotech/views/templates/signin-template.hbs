@@ -1,0 +1,41 @@
+{{> navbar-partial}}
+{{> jumbotron-partial}}
+<div class="container">
+    <div class="row">
+        {{#each products}}
+            {{> product-partial}}
+        {{/each}}
+    </div>
+</div>
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sign in</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Controller.controllers.signin.cancelButton.clicked(event)">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control" id="signin_email" type="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="signin_password" type="password" placeholder="Password">
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" onclick="Controller.controllers.signin.signinButton.clicked(event)";>Sign in</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="Controller.controllers.signin.cancelButton.clicked(event)">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#exampleModal').modal('show');
+    });
+</script>
+{{> footer-partial}}

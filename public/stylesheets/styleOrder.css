@@ -1,0 +1,47 @@
+.jumbotron {
+    text-align: center;
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .jumbotron1 {
+    text-align: center;
+    color: white;
+    padding-top: 2rem;
+  }
+  
+  .h3,.h5{
+    text-align: center;
+    padding-top: 1rem;
+  }
+  
+  .a1{
+    padding-left: 2rem;
+    padding-top: 1rem;
+  }
+  .a2{
+     padding-left: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+  
+  .bg-cover {
+    background-size: cover;
+    color: white;
+    background-position: center center;
+    position: relative;
+    z-index: -2;
+    background-image: url('../images/bg2.jpg');
+  }
+  
+  .btn-primary, .btn-primary:hover, .btn-outline-primary {
+    background-color: white;
+    color: grey;
+  }
+  
+  .img-responsive {
+    width: 100%;
+    height:auto;
+    object-fit: cover;
+  }

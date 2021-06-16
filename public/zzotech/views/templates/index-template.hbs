@@ -1,0 +1,12 @@
+{{> navbar-partial user = user}}
+{{> jumbotron-partial}}
+<main>
+    <div class="container">
+        <div class="row">
+            {{#each products}}
+                {{> product-partial this addToShoppingCart_onclick='Controller.controllers.index.addToShoppingCart_onclick'}}
+            {{/each}}
+        </div>
+    </div>
+</main>
+{{> footer-partial}}

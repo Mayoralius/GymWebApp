@@ -1,0 +1,63 @@
+{{> navbar-partial user = 'user'}}
+{{> jumbotron-partial}}
+<main>
+    <div class="container col-8 col-xl-6 bg-light border rounded" >
+        <h3 class="text-secondary">Shopping Cart</h3>
+    </div>
+
+    <br>
+    <div class="container col-8 col-xl-6 bg-light border rounded">
+
+        <h3 class="text-secondary">Items</h3>
+        <table class="table">
+            <thead class="bg-secondary text-white">
+            <tr>
+                <th scope="col">Qty</th>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each cart.items}}
+                {{> cart-partial this removeOneCartItem_onclick='Controller.controllers.cart.removeOneCartItem_onclick'
+                        removeAllCartItem_onclick='Controller.controllers.cart.removeAllCartItem_onclick'}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <br>
+
+    <div class="container col-8 col-xl-6 bg-light border rounded" >
+        <br>
+        <div class="input-group mb-3 border rounded bg-secondary">
+            <div class="input-group-prepend text-white col-4">
+                <span class="input-group-text align-middle">Subtotal</span>
+            </div>
+            <span class="form-control" id="Name">{{formatPrice cart.subtotal}}</span>
+        </div>
+
+        <div class="input-group mb-3 border rounded bg-secondary">
+            <div class="input-group-prepend text-white col-4">
+                <span class="input-group-text align-middle">Tax</span>
+            </div>
+            <span class="form-control" id="Surname">{{cart.tax}}</span>
+        </div>
+
+        <div class="input-group mb-3 border rounded bg-secondary">
+            <div class="input-group-prepend  text-white col-4">
+                <span class="input-group-text align-middle">Total</span>
+            </div>
+            <span class="form-control " id="Birth_Date">{{formatPrice cart.total}}</span>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <button type="button" class="btn btn-secondary" onclick="Controller.controllers.cart.goToPurchase_clicked()">Checkout</button>
+        </div>
+
+    </div>
+</main>
+<br><br><br><br>
+{{> footer-partial}}

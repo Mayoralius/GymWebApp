@@ -1,0 +1,19 @@
+<tr>
+    <td>{{quantity}}</td>
+    <td>{{product.name}}</td>
+    <td>{{formatPrice product.price}}</td>
+    <td>{{formatPrice total}}</td>
+    <td>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                Remove
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" onclick="{{removeOneCartItem_onclick}}(event, '{{product._id}}')">One</a>
+                <a class="dropdown-item" onclick="{{removeAllCartItem_onclick}}(event, '{{product._id}}')">All</a>
+            </div>
+        </div>
+    </td>
+</tr>
