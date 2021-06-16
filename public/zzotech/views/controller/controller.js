@@ -20,6 +20,8 @@ Controller.router.route = function () {
     Controller.controllers.signup.refresh();
   } else if (matching = path.match(/^\/zzotech\/views\/cart$/)) {
     Controller.controllers.cart.refresh();
+  } else if (matching = path.match(/^\/zzotech\/views\/calendar$/)) {
+    Controller.controllers.calendar.refresh();
   } else {
     console.error('Page not found!');
   }

@@ -17,7 +17,7 @@ Controller.controllers.signin.signinButton.clicked = function (event) {
             //console.log('Login success');
             Controller.messages.pushSuccess('Login success');
             console.log(Controller.messages.success)
-            Controller.router.go('/zzotech/views/index');
+            Controller.router.go('/zzotech/views/calendar');
         })
         .catch(function (err) {
             console.error(err)

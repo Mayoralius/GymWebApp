@@ -188,3 +188,18 @@ Model.getOrder = function (uid, oid) {
             .fail(function (err) { reject(err) });
     });
 };
+
+//Calendar
+Model.getDays = function() {
+    const d = new Date();
+    const n = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
+    const days = [];
+    for(i=0;i<n;i++){
+        days.push(i);
+    }
+    console.log(days);
+    return new Promise(function (resolve, reject) {
+        resolve(days);
+        reject(0);
+    })
+};
